@@ -9,12 +9,11 @@ case class RecordWithPrefix(id: Long, tokens: Seq[Int], prefix: Seq[Int])
 case class PrefixEntry(prefixToken: Int, recordId: Long, fullTokens: Seq[Int])
 
 
-val fileAddress = "data/bms-pos-5p-sample.txt"
-val jaccardThreshold: Double = 0.7
-
 
 object Main extends App {
-  System.setProperty("hadoop.home.dir", "C:\\Users\\hamed\\Downloads\\Documents\\Internship\\spark-vj\\data");
+
+  val fileAddress = "data/bms-pos-5p-sample.txt"
+  val jaccardThreshold: Double = 0.7
 
   val spark = SparkSession.builder()
     .appName("spark-vj")
